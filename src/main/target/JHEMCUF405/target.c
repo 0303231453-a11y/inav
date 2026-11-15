@@ -23,17 +23,13 @@
 #include "drivers/timer.h"
 
 timerHardware_t timerHardware[] = {
-    DEF_TIM(TIM3,  CH3, PB0,  TIM_USE_OUTPUT_AUTO,   0, 0), // S1 D(1,3,2)
-    DEF_TIM(TIM3,  CH4, PB1,  TIM_USE_OUTPUT_AUTO,   0, 0), // S2 D(1,0,2)
-    DEF_TIM(TIM2,  CH4, PA3,  TIM_USE_OUTPUT_AUTO,   0, 1), // S3 D(1,7,5)
-    DEF_TIM(TIM2,  CH3, PA2,  TIM_USE_OUTPUT_AUTO,   0, 0), // S4 D(1,2,5)
-    DEF_TIM(TIM3,  CH2, PB5,  TIM_USE_OUTPUT_AUTO,   0, 0), // S5 D(2,4,7)
-    DEF_TIM(TIM4,  CH2, PB7,  TIM_USE_OUTPUT_AUTO,   0, 0), // S6 D(2,7,7)
-    DEF_TIM(TIM8,  CH4, PC9,  TIM_USE_OUTPUT_AUTO,   0, 0), // S7
-    DEF_TIM(TIM8,  CH3, PC8,  TIM_USE_OUTPUT_AUTO,   0, 0), // S8
+    DEF_TIM(TIM4,  CH3, PB8,  TIM_USE_OUTPUT_AUTO,   0, 0), // SERVO1
+    DEF_TIM(TIM3,  CH2, PB5,  TIM_USE_OUTPUT_AUTO,   0, 0), // SERVO2
+    DEF_TIM(TIM3,  CH1, PB4,  TIM_USE_OUTPUT_AUTO,   0, 0), // SERVO3
+    DEF_TIM(TIM3,  CH4, PB1,  TIM_USE_OUTPUT_AUTO,   0, 0), // SERVO4
 
-    DEF_TIM(TIM1,  CH2, PA9,  TIM_USE_LED,   0, 0), // 2812LED  D(1,5,3)
-    DEF_TIM(TIM10, CH1, PB8,  TIM_USE_PPM,   0, 0), // PPM
+    // PPM va LED strip cu (PB8 / PA9) da bi bo vi bang chan khong dung PA9,
+    // con PB8 gio la SERVO1. Receiver dung serial (UART2 RX = PA3).
 };
 
 const int timerHardwareCount = sizeof(timerHardware) / sizeof(timerHardware[0]);
