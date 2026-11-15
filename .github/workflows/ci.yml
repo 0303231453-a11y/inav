@@ -5,6 +5,8 @@ name: Build firmware
 on:
   push:
     branches:
+      - '**'
+      - '!maintenance-8.x.x'
       - '!maintenance-8.x.x'
   pull_request:
     paths:
